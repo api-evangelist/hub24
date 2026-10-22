@@ -1,0 +1,25 @@
+generated: '2026-10-21'
+method: none
+status: none
+deployment:
+  mode: none
+  auth: unknown
+  verified: searched
+search_result:
+  official_hosted_server: none
+  probes:
+  - url: https://status.hub24.com.au/mcp
+    method: GET (preflight contract discovery)
+    status: 403
+    note: control path also 403 (verdict opaque); the edge refuses before routing, which proves nothing about an MCP server. Not a documented endpoint, so no JSON-RPC was sent.
+  - url: https://developer.hub24.com.au/
+    method: GET + headless render
+    status: 200
+    note: Incapsula/hCaptcha challenge shell; render recovered 0 characters of text, no links, no specs.
+  - url: https://developer.hub24.com.au/llms.txt
+    method: GET
+    status: 200
+    note: returns the same challenge shell (text/html, 2217 bytes), not an llms.txt.
+  web_search: A web search for a HUB24 MCP server / llms.txt (2026-10-21) returned no HUB24 result.
+  finding: HUB24 does not publish or advertise an MCP server, and no OpenAPI contract is saved in this repo, so no candidate tool list could be derived either.
+tools: []

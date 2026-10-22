@@ -1,0 +1,24 @@
+generated: '2026-10-21'
+method: none
+source:
+- https://zapier.com/apps/hub24/integrations
+- https://n8n.io/integrations/hub24/
+- https://composio.dev/toolkits/hub24
+- https://monid.ai/tools/hub24
+checked:
+- https://zapier.com/apps/hub24/integrations
+- https://www.make.com/en/integrations/hub24
+- https://n8n.io/integrations/hub24/
+- https://www.hub24.com.au/resources/developers-centre/
+- https://developer.hub24.com.au/
+- https://hub24.com.au/wp-content/uploads/2018/04/ASX-Release-20-November-2017-HUB24-announces-platform-enhancements.pdf
+- https://www.myprosperity.com.au/?p=55031
+- https://composio.dev/toolkits/hub24
+- https://monid.ai/tools/hub24
+summary: No verifiable integration edge could be recorded. HUB24's own site and developer centre return an Incapsula
+  challenge, so no partner or integrations page could be read; no Zapier, Make or n8n listing exists. Search-indexed
+  material describes a 2017 Account Open API used by third-party financial planning software and a myprosperity
+  data sync, but myprosperity is a HUB24 group company and no fetched page named a third-party partner.
+marketplace_apps: []
+edges: []
+templates: []

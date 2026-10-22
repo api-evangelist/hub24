@@ -1,0 +1,15 @@
+generated: '2026-10-21'
+method: none
+name: HUB24 packages
+note: No first-party HUB24 client library was found. The developer centre (developer.hub24.com.au) and www.hub24.com.au/resources/developers-centre/ answer with an Incapsula challenge (HTTP 200, ~1 KB), so any SDK pages behind them could not be read. pypi.org/pypi/hub24/json returned 404; api.github.com/orgs/hub24 returned 404. An npm search for "hub24" returned @bdt-hub24/core-hubplaywright-framework (a Playwright/Cucumber test framework) and hub-tools (publisher yas24); neither is an API client library and neither is shown to be published by HUB24 Limited, so neither is recorded.
+checked:
+- url: https://registry.npmjs.org/-/v1/search?text=hub24
+  status: 200
+- url: https://pypi.org/pypi/hub24/json
+  status: 404
+- url: https://api.github.com/orgs/hub24
+  status: 404
+- url: https://developer.hub24.com.au/
+  status: 200
+  note: Incapsula challenge body
+packages: []

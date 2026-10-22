@@ -1,23 +1,90 @@
 aid: hub24
+
 name: HUB24
-description: 'HUB24 is a company surfaced via the API Evangelist harvest backlog (source: australia-apidays-2026)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: HUB24 Limited is an ASX-listed (ASX:HUB) Australian wealth-technology company that describes itself as a provider of integrated platform, technology and data solutions for the Australian wealth industry. Its group includes the HUB24 investment and superannuation Platform (managed portfolios and a broad range of investment options for financial advisers and their clients), Class (SMSF administration, trust accounting and portfolio management software), NowInfinity (legal documentation and corporate compliance) and myprosperity. HUB24 runs a developer centre at developer.hub24.com.au where registered users can access its API library. Its public sites sit behind an Incapsula bot challenge, so this profile is built from search-indexed company material.
+
 url: https://raw.githubusercontent.com/api-evangelist/hub24/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-21'
+
 modified: '2026-10-21'
+
 tags:
 - Company
-apis: []
+- Wealth Management
+- Investment Platform
+- Superannuation
+- Financial Services
+- Fintech
+- Australia
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: SecurityTxt
+  url: well-known/hub24-status-security.txt
+- type: WellKnown
+  url: well-known/hub24-well-known.yml
+- type: Hosts
+  url: hosts/hub24-hosts.yml
+- type: Vendors
+  url: vendors/hub24-vendors.yml
+- type: DomainSecurity
+  url: security/hub24-domain-security.yml
 - type: Website
-  url: https://hub24.com.au/
+  url: https://www.hub24.com.au/
+- type: DeveloperPortal
+  url: https://developer.hub24.com.au/
+- type: PrivacyPolicy
+  url: https://www.hub24.com.au/privacy-policy/
+- type: StatusPage
+  url: https://status.hub24.com.au/
+
+apis:
+- aid: hub24:hub24-api-library
+  name: HUB24 API Library
+  description: HUB24's developer centre (developer.hub24.com.au) provides an API library for developers integrating with HUB24 infrastructure, with support available; access to the library requires registering or logging in, and HUB24 says it is updated on an ongoing basis. A 2017 HUB24 ASX release described an account-opening API that lets third-party software (financial planning, SMSF, robo-advice and licensee desktop software) create HUB24 investment and super accounts. No public contract or base URL is published; the portal answers anonymous clients with an Incapsula/hCaptcha challenge.
+  humanURL: https://developer.hub24.com.au/
+  tags:
+  - Wealth Management
+  - Investment Platform
+  - Superannuation
+  properties:
+  - type: Documentation
+    url: https://developer.hub24.com.au/
+  - type: DeveloperPortal
+    url: https://www.hub24.com.au/resources/developers-centre/
+
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  detail: www.hub24.com.au, hub24.com.au, developer.hub24.com.au and my.hub24.com.au return HTTP 200 with an Incapsula "Request unsuccessful" challenge body (about 1 KB) to plain, browser-UA and headless-render fetches. The status page is login-gated (statuspage.io). Identity facts come from search-indexed HUB24 and ASX announcement material.
+  evidence:
+  - url: https://www.hub24.com.au/
+    status: 200
+  - url: https://developer.hub24.com.au/
+    status: 200
+  - url: https://status.hub24.com.au/access/login
+    status: 200
+  - url: https://www.hub24.com.au/privacy-policy/
+    status: 200
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 9
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic
